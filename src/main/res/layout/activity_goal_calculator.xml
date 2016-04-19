@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".goalcalculator.GoalCalculatorActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Fill_to_calculate"
+        android:id="@+id/text_fill_to_calculate"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select"
+        android:id="@+id/button_send_goal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onSendResultButtonClick"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="4"
+        android:id="@+id/edit_daily_goal"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/button_send_goal"
+        android:text="0"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Workout Intensity"
+        android:id="@+id/text_work_intensity"
+        android:textSize="30sp"
+        android:layout_below="@+id/text_fill_to_calculate"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup_intensity"
+        android:layout_below="@+id/text_work_intensity"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.Sedentary - Little to none"
+            android:id="@+id/radio_intensity1"
+            android:layout_alignTop="@+id/edit_weight"
+            android:layout_alignParentEnd="true"
+            android:checked="true"
+            android:textSize="20sp"
+            android:onClick="onIntensityRadioGroupClicked"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.Lightly active - 1-3days/week"
+            android:id="@+id/radio_intensity2"
+            android:layout_alignTop="@+id/edit_weight"
+            android:layout_alignParentEnd="true"
+            android:checked="false"
+            android:textSize="20sp"
+            android:onClick="onIntensityRadioGroupClicked"/>
+
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.Moderatly Active - 3-5days/week"
+        android:id="@+id/radio_intensity3"
+        android:checked="false"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp"
+        android:onClick="onIntensityRadioGroupClicked"/>
+
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.Very active - 6-7 days/week"
+        android:id="@+id/radio_intensity4"
+        android:checked="false"
+        android:layout_below="@+id/radiogroup_intensity"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp"
+        android:onClick="onIntensityRadioGroupClicked"
+        />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5.Extremly Active - 2+ hours a day"
+        android:id="@+id/radio_intensity5"
+        android:checked="false"
+        android:layout_below="@+id/radio_intensity4"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp"
+        android:onClick="onIntensityRadioGroupClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Daily Goal:"
+        android:id="@+id/text_daily_goal"
+        android:textSize="30sp"
+        android:layout_alignTop="@+id/edit_daily_goal"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:id="@+id/edit_age"
+        android:hint="Enter age"
+        android:textSize="25sp"
+        android:layout_above="@+id/radiogroup_metic"
+        android:layout_alignParentStart="true"
+        android:editable="false"
+        android:maxLength="2" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup_metic"
+        android:layout_above="@+id/button_send_goal"
+        android:layout_alignEnd="@+id/radiogroup_intensity">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pounds"
+            android:id="@+id/radio_pounds"
+            android:checked="false"
+            android:textSize="18sp"
+            android:layout_alignTop="@+id/radiogroup_metic"
+            android:layout_toStartOf="@+id/edit_weight"
+            android:onClick="onWeightRadioGroupClicked"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kilograms"
+            android:id="@+id/radio_kilograms"
+            android:checked="true"
+            android:textSize="18sp"
+            android:layout_below="@+id/edit_weight"
+            android:layout_alignParentStart="true"
+            android:onClick="onWeightRadioGroupClicked"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/gender"
+        android:id="@+id/text_gender"
+        android:layout_below="@+id/radiogroup_intensity"
+        android:layout_alignParentStart="true" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup_gender"
+        android:layout_below="@+id/text_gender"
+        android:layout_alignStart="@+id/radiogroup_metic">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Female"
+        android:id="@+id/radio_female"
+        android:layout_below="@+id/text_gender"
+        android:layout_alignParentEnd="true"
+        android:checked="false"
+        android:textSize="18sp"
+        android:onClick = "onGenderRadioGroupClicked"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:id="@+id/radio_male"
+        android:checked="true"
+        android:layout_alignTop="@+id/radio_female"
+        android:layout_toStartOf="@+id/radio_female"
+        android:textSize="18sp"
+        android:onClick = "onGenderRadioGroupClicked"/>
+</RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="5"
+        android:id="@+id/edit_weight"
+        android:layout_alignBottom="@+id/radiogroup_metic"
+        android:layout_alignParentStart="true"
+        android:hint="Enter weight"
+        android:maxLength="5"
+        android:textSize="25sp"
+        android:textIsSelectable="false" />
+
+</RelativeLayout>

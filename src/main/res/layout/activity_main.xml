@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="il.co.amits.proteintracker.MainActivity"
+    android:clickable="false">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/How_much_protein_you_ate"
+        android:id="@+id/text_how_much_protein"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:id="@+id/button_reset_daily_intake"
+        android:layout_below="@+id/button_add_protein"
+        android:layout_alignParentEnd="true"
+        android:enabled="true"
+        android:onClick="onResetDailyIntakeButClick"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:id="@+id/button_add_protein"
+        android:layout_below="@+id/text_how_much_protein"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClickAddProt"/>
+
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Open_menu"
+        android:id="@+id/button_open_food_activity"
+        android:layout_alignTop="@+id/edit_protein_intake"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:enabled="true"
+        android:onClick="onClickOpenFoodActivity"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/text_progress"
+        android:layout_below="@+id/progressbar_daily_progress"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recalculate_goal"
+        android:id="@+id/button_recalculate_daily_goal"
+        android:layout_below="@+id/switch_alarms"
+        android:layout_centerHorizontal="true"
+        android:onClick = "onRecalculateGoalButClick"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="6"
+        android:id="@+id/edit_protein_intake"
+        android:layout_below="@+id/text_how_much_protein"
+        android:layout_centerHorizontal="true"
+        android:enabled="true"
+        android:contentDescription="Protein/gram"
+        android:hint="Protein/gram" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/keep_notif"
+        android:id="@+id/switch_keep_notification"
+        android:layout_marginTop="25dp"
+        android:checked="true"
+        android:textSize="20sp"
+        android:layout_below="@+id/text_options"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/button_reset_daily_intake"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/options"
+        android:id="@+id/text_options"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remind_at_eating"
+        android:id="@+id/switch_alarms"
+        android:checked="true"
+        android:textSize="20sp"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/switch_keep_notification"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:enabled="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Progress/Daily Goal:"
+        android:id="@+id/text_daily_goal"
+        android:layout_below="@+id/button_open_food_activity"
+        android:layout_alignParentStart="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar_daily_progress"
+        android:max="100"
+        android:indeterminate="false"
+        android:layout_below="@+id/button_reset_daily_intake"
+        android:layout_alignParentStart="true"
+        android:progress="50"
+        android:layout_alignEnd="@+id/button_reset_daily_intake" />
+
+</RelativeLayout>
