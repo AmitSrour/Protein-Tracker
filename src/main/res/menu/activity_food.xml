@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="il.co.amits.proteintracker.food.FoodActivity">
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:icon="@drawable/ic_search_white"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+</menu>
